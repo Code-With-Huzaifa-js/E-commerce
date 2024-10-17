@@ -7,7 +7,7 @@ function Product() {
             getProducts();
     },[]);
     const getProducts = async ()=>{
-        let result = await fetch(`http://localhost:5000/getProduct`,{
+        let result = await fetch(`https://e-commerce-six-lime.vercel.app/getProduct`,{
             headers:{
                 "authorization" : `berear ${JSON.parse(localStorage.getItem('token'))}`
             }
@@ -18,7 +18,7 @@ function Product() {
     let SearchProducts = async(e)=>{
         let key = e.target.value
         if(key){
-            let results = await fetch(`http://localhost:5000/search/${key}`,{
+            let results = await fetch(`https://e-commerce-six-lime.vercel.app/search/${key}`,{
                 headers:{
                     "authorization" : `berear ${JSON.parse(localStorage.getItem('token'))}`
                 }
