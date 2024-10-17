@@ -15,7 +15,7 @@ function MyProduct() {
     },[]);
     const getProducts = async ()=>{
         const userId = JSON.parse(localStorage.getItem('user'))._id;
-        let result = await fetch(`http://localhost:5000/fetchProducts/${userId}`,{
+        let result = await fetch(`https://e-commerce-six-lime.vercel.app/fetchProducts/${userId}`,{
             headers:{
                 "authorization" : `berear ${JSON.parse(localStorage.getItem('token'))}`
             }
@@ -25,7 +25,7 @@ function MyProduct() {
     };
 
     const DeletePro = async (id)=>{
-        let deleteProduct = await fetch(`http://localhost:5000/deleteProducts/${id}`,{
+        let deleteProduct = await fetch(`https://e-commerce-six-lime.vercel.app/deleteProducts/${id}`,{
             method:'delete'
         });
         deleteProduct = await deleteProduct.json();
@@ -44,7 +44,7 @@ function MyProduct() {
     }
 
     const getPid = async(Id)=>{
-        let result = await fetch(`http://localhost:5000/Products/${Id}`,{
+        let result = await fetch(`https://e-commerce-six-lime.vercel.app/Products/${Id}`,{
             headers:{
                 "authorization" : `berear ${JSON.parse(localStorage.getItem('token'))}`
             }
