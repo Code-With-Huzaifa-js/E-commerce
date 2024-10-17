@@ -69,7 +69,7 @@ function AddProducts(props){
             setCompany("");
             setCategory("");
             const userId = JSON.parse(localStorage.getItem('user'))._id;
-            let result = await fetch('http://localhost:5000/addProducts',{
+            let result = await fetch('https://e-commerce-six-lime.vercel.app/addProducts',{
                 method:"post",
                 body: JSON.stringify({name, price, category, userId, company}),
                 headers:{
