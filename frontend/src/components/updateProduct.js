@@ -73,7 +73,7 @@ function UpdateProducts(props){
 
         if(nameVal === true && priceVal === true && categoryVal === true && companyVal === true){
 
-            let result = await fetch(`http://localhost:5000/updateProducts/${props.productID}`,{
+            let result = await fetch(`https://e-commerce-six-lime.vercel.app/updateProducts/${props.productID}`,{
                 method:"put",
                 body: JSON.stringify({name, price, category, company}),
                 headers: {
